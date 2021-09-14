@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8544005B26F14E8C00524661 /* SetTodoCompletedUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544005A26F14E8C00524661 /* SetTodoCompletedUsecase.swift */; };
+		8544005D26F14F5900524661 /* DeleteTodoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544005C26F14F5900524661 /* DeleteTodoUsecase.swift */; };
+		8544005F26F14F8100524661 /* DeleteTodoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8544005E26F14F8100524661 /* DeleteTodoError.swift */; };
 		85701ECC26F00F68009E64E2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701ECB26F00F68009E64E2 /* HomeView.swift */; };
 		85701ECE26F010F7009E64E2 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701ECD26F010F7009E64E2 /* HomeViewModel.swift */; };
 		85701ED026F01122009E64E2 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701ECF26F01122009E64E2 /* Todo.swift */; };
-		85701ED526F01459009E64E2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701ED426F01459009E64E2 /* HomeViewModelTests.swift */; };
 		85701EDD26F01521009E64E2 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EDC26F01521009E64E2 /* Image+Extension.swift */; };
 		85701EE126F015FE009E64E2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EE026F015FE009E64E2 /* Color+Extension.swift */; };
 		85701EE526F026D3009E64E2 /* FetchTodosUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */; };
@@ -19,6 +21,13 @@
 		85701EEE26F028E3009E64E2 /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EED26F028E3009E64E2 /* UserDefaultsConstants.swift */; };
 		85701EF326F047B6009E64E2 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EF226F047B6009E64E2 /* NewTodoView.swift */; };
 		857678D026F05113006075B8 /* NewTodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678CF26F05113006075B8 /* NewTodoViewModel.swift */; };
+		857678D426F0EA16006075B8 /* TDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678D326F0EA16006075B8 /* TDButton.swift */; };
+		857678D626F0EAD8006075B8 /* TDTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678D526F0EAD8006075B8 /* TDTextField.swift */; };
+		857678DA26F0EBA7006075B8 /* HomeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678D926F0EBA7006075B8 /* HomeRepositoryTests.swift */; };
+		857678E026F11E4E006075B8 /* SaveNewTodoUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678DF26F11E4E006075B8 /* SaveNewTodoUsecase.swift */; };
+		857678E326F1244D006075B8 /* NewTodoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678E226F1244D006075B8 /* NewTodoError.swift */; };
+		857678E626F127FF006075B8 /* NewTodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678E526F127FF006075B8 /* NewTodoRepository.swift */; };
+		857678E926F12AF4006075B8 /* NewTodoUserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857678E826F12AF4006075B8 /* NewTodoUserDefaultsDataSource.swift */; };
 		85C5330826F00E1400C4684B /* ThingsTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C5330726F00E1400C4684B /* ThingsTodoApp.swift */; };
 		85C5330C26F00E1500C4684B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5330B26F00E1500C4684B /* Assets.xcassets */; };
 		85C5330F26F00E1500C4684B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5330E26F00E1500C4684B /* Preview Assets.xcassets */; };
@@ -35,10 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8544005A26F14E8C00524661 /* SetTodoCompletedUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTodoCompletedUsecase.swift; sourceTree = "<group>"; };
+		8544005C26F14F5900524661 /* DeleteTodoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoUsecase.swift; sourceTree = "<group>"; };
+		8544005E26F14F8100524661 /* DeleteTodoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteTodoError.swift; sourceTree = "<group>"; };
 		85701ECB26F00F68009E64E2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		85701ECD26F010F7009E64E2 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		85701ECF26F01122009E64E2 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
-		85701ED426F01459009E64E2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		85701EDC26F01521009E64E2 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		85701EE026F015FE009E64E2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodosUsecase.swift; sourceTree = "<group>"; };
@@ -47,6 +58,13 @@
 		85701EED26F028E3009E64E2 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
 		85701EF226F047B6009E64E2 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 		857678CF26F05113006075B8 /* NewTodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoViewModel.swift; sourceTree = "<group>"; };
+		857678D326F0EA16006075B8 /* TDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDButton.swift; sourceTree = "<group>"; };
+		857678D526F0EAD8006075B8 /* TDTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDTextField.swift; sourceTree = "<group>"; };
+		857678D926F0EBA7006075B8 /* HomeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepositoryTests.swift; sourceTree = "<group>"; };
+		857678DF26F11E4E006075B8 /* SaveNewTodoUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveNewTodoUsecase.swift; sourceTree = "<group>"; };
+		857678E226F1244D006075B8 /* NewTodoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoError.swift; sourceTree = "<group>"; };
+		857678E526F127FF006075B8 /* NewTodoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoRepository.swift; sourceTree = "<group>"; };
+		857678E826F12AF4006075B8 /* NewTodoUserDefaultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoUserDefaultsDataSource.swift; sourceTree = "<group>"; };
 		85C5330426F00E1300C4684B /* ThingsTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C5330726F00E1400C4684B /* ThingsTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsTodoApp.swift; sourceTree = "<group>"; };
 		85C5330B26F00E1500C4684B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +123,8 @@
 		85701EC526F00F07009E64E2 /* NewTodo */ = {
 			isa = PBXGroup;
 			children = (
+				857678DC26F11DBD006075B8 /* Data */,
+				857678DB26F11DB8006075B8 /* Domain */,
 				85701EF026F047A3009E64E2 /* Presentation */,
 			);
 			path = NewTodo;
@@ -164,33 +184,9 @@
 		85701ED226F0143E009E64E2 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				85701ED326F01442009E64E2 /* Presentation */,
+				857678D726F0EB88006075B8 /* Data */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		85701ED326F01442009E64E2 /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				85701ED626F01488009E64E2 /* ViewModels */,
-				85701ED726F0148D009E64E2 /* View */,
-			);
-			path = Presentation;
-			sourceTree = "<group>";
-		};
-		85701ED626F01488009E64E2 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				85701ED426F01459009E64E2 /* HomeViewModelTests.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		85701ED726F0148D009E64E2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		85701ED826F014CA009E64E2 /* Common */ = {
@@ -198,6 +194,7 @@
 			children = (
 				85701EEC26F028D7009E64E2 /* Constants */,
 				85701EDB26F014FF009E64E2 /* Extensions */,
+				857678D226F0E9FB006075B8 /* Components */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -223,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */,
+				8544005A26F14E8C00524661 /* SetTodoCompletedUsecase.swift */,
 			);
 			path = Usecases;
 			sourceTree = "<group>";
@@ -274,6 +272,83 @@
 				857678CF26F05113006075B8 /* NewTodoViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		857678D226F0E9FB006075B8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				857678D326F0EA16006075B8 /* TDButton.swift */,
+				857678D526F0EAD8006075B8 /* TDTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		857678D726F0EB88006075B8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				857678D826F0EB93006075B8 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		857678D826F0EB93006075B8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				857678D926F0EBA7006075B8 /* HomeRepositoryTests.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		857678DB26F11DB8006075B8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				857678E126F12443006075B8 /* Entities */,
+				857678DD26F11DC4006075B8 /* Usecases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		857678DC26F11DBD006075B8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				857678E726F12AE7006075B8 /* DataSources */,
+				857678E426F127F7006075B8 /* Repositories */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		857678DD26F11DC4006075B8 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				857678DF26F11E4E006075B8 /* SaveNewTodoUsecase.swift */,
+				8544005C26F14F5900524661 /* DeleteTodoUsecase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		857678E126F12443006075B8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				857678E226F1244D006075B8 /* NewTodoError.swift */,
+				8544005E26F14F8100524661 /* DeleteTodoError.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		857678E426F127F7006075B8 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				857678E526F127FF006075B8 /* NewTodoRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		857678E726F12AE7006075B8 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				857678E826F12AF4006075B8 /* NewTodoUserDefaultsDataSource.swift */,
+			);
+			path = DataSources;
 			sourceTree = "<group>";
 		};
 		85C532FB26F00E1300C4684B = {
@@ -423,18 +498,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8544005D26F14F5900524661 /* DeleteTodoUsecase.swift in Sources */,
 				85701EE826F0279F009E64E2 /* HomeRepository.swift in Sources */,
+				857678D626F0EAD8006075B8 /* TDTextField.swift in Sources */,
 				85701EF326F047B6009E64E2 /* NewTodoView.swift in Sources */,
 				85701EDD26F01521009E64E2 /* Image+Extension.swift in Sources */,
+				857678D426F0EA16006075B8 /* TDButton.swift in Sources */,
+				8544005F26F14F8100524661 /* DeleteTodoError.swift in Sources */,
 				85701EEE26F028E3009E64E2 /* UserDefaultsConstants.swift in Sources */,
 				85701EE126F015FE009E64E2 /* Color+Extension.swift in Sources */,
+				8544005B26F14E8C00524661 /* SetTodoCompletedUsecase.swift in Sources */,
+				857678E326F1244D006075B8 /* NewTodoError.swift in Sources */,
 				857678D026F05113006075B8 /* NewTodoViewModel.swift in Sources */,
+				857678E026F11E4E006075B8 /* SaveNewTodoUsecase.swift in Sources */,
+				857678E926F12AF4006075B8 /* NewTodoUserDefaultsDataSource.swift in Sources */,
 				85C5330826F00E1400C4684B /* ThingsTodoApp.swift in Sources */,
 				85701ECE26F010F7009E64E2 /* HomeViewModel.swift in Sources */,
 				85701EE526F026D3009E64E2 /* FetchTodosUsecase.swift in Sources */,
 				85701ECC26F00F68009E64E2 /* HomeView.swift in Sources */,
 				85701ED026F01122009E64E2 /* Todo.swift in Sources */,
 				85701EEB26F02856009E64E2 /* HomeUserDefaultsDataSource.swift in Sources */,
+				857678E626F127FF006075B8 /* NewTodoRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,7 +526,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85701ED526F01459009E64E2 /* HomeViewModelTests.swift in Sources */,
+				857678DA26F0EBA7006075B8 /* HomeRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

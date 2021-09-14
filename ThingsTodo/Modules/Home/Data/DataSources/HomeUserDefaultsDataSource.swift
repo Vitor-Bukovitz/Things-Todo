@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeUserDefaultsDataSource {
     func fetchTodos(completion: ([Todo]) -> Void)
+    func setCompleted(todoId: UUID, completed: Bool)
 }
 
 class HomeUserDefaultsDataSourceImpl: HomeUserDefaultsDataSource {
@@ -26,5 +27,17 @@ class HomeUserDefaultsDataSourceImpl: HomeUserDefaultsDataSource {
             return completion([])
         }
         completion(todosArray)
+    }
+    
+    func setCompleted(todoId: UUID, completed: Bool) {
+        fetchTodos { todos in
+            var todos = todos
+            if let index = todos.firstIndex(where: { $0.id == todoId }) {
+                let encoder = JSONEncoder()
+                todos[index].isCompleted = completed
+                guard let data = try? encoder.encode(todos) else { return }
+                userDefaults.setValue(data, forKey: UserDefaultsConstants.todosArray)
+            }
+        }
     }
 }

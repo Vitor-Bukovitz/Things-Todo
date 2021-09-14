@@ -9,12 +9,13 @@ import SwiftUI
 
 struct NewTodoView: View {
     
-    @State private var viewModel = NewTodoViewModel()
+    @Environment(\.presentationMode) private var presentationMode
+    @StateObject private var viewModel = NewTodoViewModel()
     
+    private var todo: Todo?
+        
     init(todo: Todo? = nil) {
-        if let todo = todo {
-            viewModel.todoText = todo.text
-        }
+        self.todo = todo
     }
     
     var body: some View {
@@ -25,30 +26,41 @@ struct NewTodoView: View {
                 Text("Title")
                     .foregroundColor(.white)
                     .padding(.bottom, 8)
-                TextField("", text: $viewModel.todoText)
-                    .padding()
-                    .cornerRadius(10)
-                    .accentColor(Color.primaryColor)
-                    .overlay(RoundedRectangle(cornerRadius: 10)
-                                .strokeBorder(Color.black, style: StrokeStyle(lineWidth: 1)))
-                    .background(RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color.white))
+                TDTextField(text: $viewModel.todoText)
                 Spacer()
-                Button("Salvar") {
-                    print("123")
+                TDButton(text: "Salvar", backgroundColor: .secondaryColor) {
+                    viewModel.saveTodo()
                 }
-                .frame(maxWidth: .infinity, minHeight: 44)
-                .background(Color.secondaryColor)
-                .cornerRadius(8)
                 .padding(.bottom, 8)
-                Button("Excluir") {
-                    
+                .alert(isPresented: $viewModel.isShowingErrorAlert) {
+                    Alert(
+                        title: Text(viewModel.errorAlertTitle),
+                        message: Text(viewModel.errorAlertMessage),
+                        dismissButton: .cancel(Text("Ok"), action: {
+                            presentationMode.wrappedValue.dismiss()
+                        })
+                    )
                 }
-                .frame(maxWidth: .infinity, minHeight: 44)
-                .background(Color.redColor)
-                .cornerRadius(8)
+                if let todo = todo {
+                    TDButton(text: "Excluir", backgroundColor: .redColor) {
+                        viewModel.isShowingDeleteAlert = true
+                    }
+                    .alert(isPresented: $viewModel.isShowingDeleteAlert) {
+                        Alert(
+                            title: Text("Delete?"),
+                            message: Text("Are you sure you want to delete this to do?"),
+                            primaryButton: .default(Text("Cancel")),
+                            secondaryButton: .destructive(Text("Delete"), action: {
+                                viewModel.deleteTodo(todo)
+                            })
+                        )
+                    }
+                }
             }
             .padding()
+        }
+        .onAppear {
+            viewModel.setTodo(todo)
         }
         .navigationBarTitle("New Todo", displayMode: .inline)
     }

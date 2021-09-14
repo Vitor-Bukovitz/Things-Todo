@@ -59,16 +59,16 @@ struct HomeView: View {
                         }
                     }
                 }
+                .onAppear {
+                    viewModel.fetchTodos()
+                }
                 .navigationTitle("Things Todo")
                 .navigationViewStyle(StackNavigationViewStyle())
-                .navigationBarItems(trailing: NavigationLink(destination: HomeView(), label: {
+                .navigationBarItems(trailing: NavigationLink(destination: NewTodoView(), label: {
                     Image.plusIcon
                 }))
             }
             .accentColor(.white)
-            .onAppear {
-                viewModel.fetchTodos()
-            }
         }
     }
 }

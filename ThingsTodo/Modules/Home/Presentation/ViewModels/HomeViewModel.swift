@@ -13,9 +13,12 @@ class HomeViewModel: ObservableObject {
     @Published var todos = [Todo]()
     
     private let fetchTodosUsecase: FetchTodosUsecase
+    private let setTodoCompletedUsecase: SetTodoCompletedUsecase
     
-    init(fetchTodosUsecase: FetchTodosUsecase = FetchTodosUsecase()) {
+    init(fetchTodosUsecase: FetchTodosUsecase = FetchTodosUsecase(),
+         setTodoCompletedUsecase: SetTodoCompletedUsecase = SetTodoCompletedUsecase()) {
         self.fetchTodosUsecase = fetchTodosUsecase
+        self.setTodoCompletedUsecase = setTodoCompletedUsecase
         self.fetchTodosUsecase.delegate = self
         self.fetchTodos()
     }
@@ -28,6 +31,7 @@ class HomeViewModel: ObservableObject {
         for (index, todo) in todos.enumerated() {
             if todo.id == id {
                 todos[index].isCompleted.toggle()
+                setTodoCompletedUsecase.call(todoId: id, completed: todos[index].isCompleted)
             }
         }
     }
@@ -36,10 +40,7 @@ class HomeViewModel: ObservableObject {
 extension HomeViewModel: FetchTodosUsecaseDelegate {
     
     func fetchTodosSuccess(_ todos: [Todo]) {
-        self.todos = [
-            Todo(text: "Study SwiftUI"),
-            Todo(text: "Study SwiftUI")
-        ]
+        self.todos = todos
         self.isLoading = false
     }
 }

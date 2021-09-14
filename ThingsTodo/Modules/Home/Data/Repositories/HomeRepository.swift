@@ -7,19 +7,24 @@
 
 import Foundation
 
-protocol HomeRepository {
+protocol HomeRepository: AnyObject {
     func fetchTodos(completion: ([Todo]) -> Void)
+    func setCompleted(todoId: UUID, completed: Bool)
 }
 
 class HomeRepositoryImpl: HomeRepository {
     
-    private let homeUserDefaultsDataSource: HomeUserDefaultsDataSource
+    private let userDefaultsDataSource: HomeUserDefaultsDataSource
     
-    init(homeUserDefaultsDataSource: HomeUserDefaultsDataSource = HomeUserDefaultsDataSourceImpl()) {
-        self.homeUserDefaultsDataSource = homeUserDefaultsDataSource
+    init(userDefaultsDataSource: HomeUserDefaultsDataSource = HomeUserDefaultsDataSourceImpl()) {
+        self.userDefaultsDataSource = userDefaultsDataSource
     }
     
     func fetchTodos(completion: ([Todo]) -> Void) {
-        homeUserDefaultsDataSource.fetchTodos(completion: completion)
+        userDefaultsDataSource.fetchTodos(completion: completion)
+    }
+    
+    func setCompleted(todoId: UUID, completed: Bool) {
+        userDefaultsDataSource.setCompleted(todoId: todoId, completed: completed)
     }
 }
