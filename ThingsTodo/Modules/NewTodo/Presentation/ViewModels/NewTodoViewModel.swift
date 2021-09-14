@@ -2,7 +2,7 @@
 //  NewTodoViewModel.swift
 //  ThingsTodo
 //
-//  Created by PremierSoft on 14/09/21.
+//  Created by Vitor Bukovitz on 14/09/21.
 //
 
 import Foundation
