@@ -13,7 +13,13 @@ protocol HomeRepository {
 
 class HomeRepositoryImpl: HomeRepository {
     
+    private let homeUserDefaultsDataSource: HomeUserDefaultsDataSource
+    
+    init(homeUserDefaultsDataSource: HomeUserDefaultsDataSource = HomeUserDefaultsDataSourceImpl()) {
+        self.homeUserDefaultsDataSource = homeUserDefaultsDataSource
+    }
+    
     func fetchTodos(completion: ([Todo]) -> Void) {
-        
+        homeUserDefaultsDataSource.fetchTodos(completion: completion)
     }
 }

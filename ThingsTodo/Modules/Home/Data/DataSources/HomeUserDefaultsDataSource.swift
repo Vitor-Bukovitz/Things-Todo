@@ -20,6 +20,11 @@ class HomeUserDefaultsDataSourceImpl: HomeUserDefaultsDataSource {
     }
     
     func fetchTodos(completion: ([Todo]) -> Void) {
-        userDefaults.array(forKey: "")
+        let decoder = JSONDecoder()
+        guard let data = userDefaults.value(forKey: UserDefaultsConstants.todosArray) as? Data,
+              let todosArray = try? decoder.decode([Todo].self, from: data) else {
+            return completion([])
+        }
+        completion(todosArray)
     }
 }

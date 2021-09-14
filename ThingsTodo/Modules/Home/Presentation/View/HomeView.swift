@@ -9,28 +9,47 @@ import SwiftUI
 
 struct HomeView: View {
     
-    private let viewModel: HomeViewModel
-    
-    init(viewModel: HomeViewModel = HomeViewModel()) {
-        self.viewModel = viewModel
-    }
+    @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        NavigationView {
-            List(viewModel.todos, id: \.id) { todo in
-                Text(todo.text)
-                    .accentColor(.white)
+        if (viewModel.isLoading) {
+            ZStack {
+                Color.primaryColor
+                    .ignoresSafeArea()
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle(tint: Color.white))
             }
-            .navigationTitle("Things Todo")
-            .navigationViewStyle(StackNavigationViewStyle())
-            .navigationBarItems(trailing: Button(action: {
-                
-            }, label: {
-                Image.plusIcon
-            }))
-        }
-        .onAppear {
-            viewModel.fetchTodos()
+        } else {
+            NavigationView {
+                ZStack {
+                    Color.primaryColor
+                        .ignoresSafeArea()
+                    if (!viewModel.todos.isEmpty) {
+                        List(viewModel.todos, id: \.id) { todo in
+                            Text(todo.text)
+                                .accentColor(.white)
+                        }
+                    } else {
+                        VStack {
+                            Spacer()
+                            Image.emptyIcon
+                                .padding(.bottom, 12)
+                            Text("None found")
+                                .bold()
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                    }
+                }
+                .navigationTitle("Things Todo")
+                .navigationViewStyle(StackNavigationViewStyle())
+                .navigationBarItems(trailing: NavigationLink(destination: HomeView(), label: {
+                    Image.plusIcon
+                }))
+            }
+            .onAppear {
+                viewModel.fetchTodos()
+            }
         }
     }
 }

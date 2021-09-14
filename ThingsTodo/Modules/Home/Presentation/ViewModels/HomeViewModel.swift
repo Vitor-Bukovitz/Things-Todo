@@ -9,21 +9,26 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     
-    @Published var isLoading = false
+    @Published var isLoading = true
     @Published var todos = [Todo]()
     
     private let fetchTodosUsecase: FetchTodosUsecase
     
     init(fetchTodosUsecase: FetchTodosUsecase = FetchTodosUsecase()) {
         self.fetchTodosUsecase = fetchTodosUsecase
+        self.fetchTodosUsecase.delegate = self
+        self.fetchTodos()
     }
     
     func fetchTodos() {
-        isLoading = false
-        todos = [
-            Todo(text: "Study SwiftUI", isCompleted: false),
-            Todo(text: "Wash the dishes", isCompleted: false),
-            Todo(text: "Wash the dishes", isCompleted: false)
-        ]
+        fetchTodosUsecase.call()
+    }
+}
+
+extension HomeViewModel: FetchTodosUsecaseDelegate {
+    
+    func fetchTodosSuccess(_ todos: [Todo]) {
+        self.todos = todos
+        self.isLoading = false
     }
 }

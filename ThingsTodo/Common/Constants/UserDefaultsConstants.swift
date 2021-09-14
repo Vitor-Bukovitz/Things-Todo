@@ -8,6 +8,6 @@
 import Foundation
 
 enum UserDefaultsConstants {
-    
+    static let todosArray = "TODOS_ARRAY"
 }
 

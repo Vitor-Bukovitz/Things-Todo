@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Todo {
-    let id = UUID()
+struct Todo: Codable {
+    var id = UUID()
     let text: String
-    let isCompleted: Bool
+    var isCompleted: Bool = false
 }
