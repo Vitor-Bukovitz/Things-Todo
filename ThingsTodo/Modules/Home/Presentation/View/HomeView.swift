@@ -26,8 +26,26 @@ struct HomeView: View {
                         .ignoresSafeArea()
                     if (!viewModel.todos.isEmpty) {
                         List(viewModel.todos, id: \.id) { todo in
-                            Text(todo.text)
-                                .accentColor(.white)
+                            NavigationLink(destination: NewTodoView(todo: todo)) {
+                                HStack {
+                                    Text(todo.text)
+                                        .accentColor(.white)
+                                    Spacer()
+                                    ZStack {
+                                        if todo.isCompleted {
+                                            Image.checkedBoxIcon
+                                        } else {
+                                            Image.emptyBoxIcon
+                                        }
+                                    }
+                                    .frame(width: 24, height: 24)
+                                    .onTapGesture {
+                                        viewModel.toggleTodoCompleted(for: todo.id)
+                                    }
+                                }
+                                .contentShape(Rectangle())
+                                .frame(height: 34)
+                            }
                         }
                     } else {
                         VStack {
@@ -47,6 +65,7 @@ struct HomeView: View {
                     Image.plusIcon
                 }))
             }
+            .accentColor(.white)
             .onAppear {
                 viewModel.fetchTodos()
             }

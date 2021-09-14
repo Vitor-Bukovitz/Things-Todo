@@ -23,12 +23,23 @@ class HomeViewModel: ObservableObject {
     func fetchTodos() {
         fetchTodosUsecase.call()
     }
+    
+    func toggleTodoCompleted(for id: UUID) {
+        for (index, todo) in todos.enumerated() {
+            if todo.id == id {
+                todos[index].isCompleted.toggle()
+            }
+        }
+    }
 }
 
 extension HomeViewModel: FetchTodosUsecaseDelegate {
     
     func fetchTodosSuccess(_ todos: [Todo]) {
-        self.todos = todos
+        self.todos = [
+            Todo(text: "Study SwiftUI"),
+            Todo(text: "Study SwiftUI")
+        ]
         self.isLoading = false
     }
 }
