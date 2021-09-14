@@ -8,7 +8,7 @@
 import Foundation
 
 struct Todo {
-    var id = UUID()
+    let id = UUID()
     let text: String
     let isCompleted: Bool
 }

@@ -13,6 +13,10 @@
 		85701ED526F01459009E64E2 /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701ED426F01459009E64E2 /* HomeViewModelTests.swift */; };
 		85701EDD26F01521009E64E2 /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EDC26F01521009E64E2 /* Image+Extension.swift */; };
 		85701EE126F015FE009E64E2 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EE026F015FE009E64E2 /* Color+Extension.swift */; };
+		85701EE526F026D3009E64E2 /* FetchTodosUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */; };
+		85701EE826F0279F009E64E2 /* HomeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EE726F0279F009E64E2 /* HomeRepository.swift */; };
+		85701EEB26F02856009E64E2 /* HomeUserDefaultsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EEA26F02856009E64E2 /* HomeUserDefaultsDataSource.swift */; };
+		85701EEE26F028E3009E64E2 /* UserDefaultsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85701EED26F028E3009E64E2 /* UserDefaultsConstants.swift */; };
 		85C5330826F00E1400C4684B /* ThingsTodoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C5330726F00E1400C4684B /* ThingsTodoApp.swift */; };
 		85C5330C26F00E1500C4684B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5330B26F00E1500C4684B /* Assets.xcassets */; };
 		85C5330F26F00E1500C4684B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85C5330E26F00E1500C4684B /* Preview Assets.xcassets */; };
@@ -35,6 +39,10 @@
 		85701ED426F01459009E64E2 /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 		85701EDC26F01521009E64E2 /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		85701EE026F015FE009E64E2 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchTodosUsecase.swift; sourceTree = "<group>"; };
+		85701EE726F0279F009E64E2 /* HomeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRepository.swift; sourceTree = "<group>"; };
+		85701EEA26F02856009E64E2 /* HomeUserDefaultsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUserDefaultsDataSource.swift; sourceTree = "<group>"; };
+		85701EED26F028E3009E64E2 /* UserDefaultsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsConstants.swift; sourceTree = "<group>"; };
 		85C5330426F00E1300C4684B /* ThingsTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThingsTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C5330726F00E1400C4684B /* ThingsTodoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThingsTodoApp.swift; sourceTree = "<group>"; };
 		85C5330B26F00E1500C4684B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,7 +117,8 @@
 		85701EC726F00F4A009E64E2 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				85701ECF26F01122009E64E2 /* Todo.swift */,
+				85701EE226F02685009E64E2 /* Entities */,
+				85701EE326F0268D009E64E2 /* Usecases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -117,6 +126,8 @@
 		85701EC826F00F4E009E64E2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				85701EE926F02848009E64E2 /* DataSources */,
+				85701EE626F02782009E64E2 /* Repositories */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -180,6 +191,7 @@
 		85701ED826F014CA009E64E2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				85701EEC26F028D7009E64E2 /* Constants */,
 				85701EDB26F014FF009E64E2 /* Extensions */,
 			);
 			path = Common;
@@ -192,6 +204,46 @@
 				85701EE026F015FE009E64E2 /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		85701EE226F02685009E64E2 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				85701ECF26F01122009E64E2 /* Todo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		85701EE326F0268D009E64E2 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				85701EE426F026D3009E64E2 /* FetchTodosUsecase.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		85701EE626F02782009E64E2 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				85701EE726F0279F009E64E2 /* HomeRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		85701EE926F02848009E64E2 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				85701EEA26F02856009E64E2 /* HomeUserDefaultsDataSource.swift */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		85701EEC26F028D7009E64E2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				85701EED26F028E3009E64E2 /* UserDefaultsConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		85C532FB26F00E1300C4684B = {
@@ -341,12 +393,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85701EE826F0279F009E64E2 /* HomeRepository.swift in Sources */,
 				85701EDD26F01521009E64E2 /* Image+Extension.swift in Sources */,
+				85701EEE26F028E3009E64E2 /* UserDefaultsConstants.swift in Sources */,
 				85701EE126F015FE009E64E2 /* Color+Extension.swift in Sources */,
 				85C5330826F00E1400C4684B /* ThingsTodoApp.swift in Sources */,
 				85701ECE26F010F7009E64E2 /* HomeViewModel.swift in Sources */,
+				85701EE526F026D3009E64E2 /* FetchTodosUsecase.swift in Sources */,
 				85701ECC26F00F68009E64E2 /* HomeView.swift in Sources */,
 				85701ED026F01122009E64E2 /* Todo.swift in Sources */,
+				85701EEB26F02856009E64E2 /* HomeUserDefaultsDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
