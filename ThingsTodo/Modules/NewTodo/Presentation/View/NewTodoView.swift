@@ -9,9 +9,12 @@ import SwiftUI
 
 struct NewTodoView: View {
     
-    @State var text: String = ""
+    @State private var viewModel = NewTodoViewModel()
     
     init(todo: Todo? = nil) {
+        if let todo = todo {
+            viewModel.todoText = todo.text
+        }
     }
     
     var body: some View {
@@ -22,7 +25,7 @@ struct NewTodoView: View {
                 Text("Title")
                     .foregroundColor(.white)
                     .padding(.bottom, 8)
-                TextField("", text: $text)
+                TextField("", text: $viewModel.todoText)
                     .padding()
                     .cornerRadius(10)
                     .accentColor(Color.primaryColor)
@@ -31,13 +34,19 @@ struct NewTodoView: View {
                     .background(RoundedRectangle(cornerRadius: 10)
                                     .fill(Color.white))
                 Spacer()
-                
-                Button("Excluir") {
-                    print("123")
-                }
                 Button("Salvar") {
                     print("123")
                 }
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(Color.secondaryColor)
+                .cornerRadius(8)
+                .padding(.bottom, 8)
+                Button("Excluir") {
+                    
+                }
+                .frame(maxWidth: .infinity, minHeight: 44)
+                .background(Color.redColor)
+                .cornerRadius(8)
             }
             .padding()
         }
