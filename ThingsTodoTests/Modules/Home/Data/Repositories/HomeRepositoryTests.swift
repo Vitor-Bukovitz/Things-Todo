@@ -24,8 +24,20 @@ class HomeRepositoryTests: XCTestCase {
         
         // Assert
         wait(for: [expectation], timeout: 5)
-        print(homeUserDefaults.fetchTodoCount)
         XCTAssert(homeUserDefaults.fetchTodoCount == 1)
+    }
+    
+    func testSetCompletedMustCallHomeUserDefaultsSetCompleted() {
+        // Arrange
+        let homeUserDefaults = HomeUserDefaultsDataSourceMock()
+        homeUserDefaults.result = []
+        let homeRepository = makeHomeRepository(homeUserDefaults: homeUserDefaults)
+        
+        // Act
+        homeRepository.setCompleted(todoId: UUID(), completed: false)
+        
+        // Assert
+        XCTAssert(homeUserDefaults.setCompletedCount == 1)
     }
     
     weak var homeRepository: HomeRepository?
@@ -35,7 +47,7 @@ class HomeRepositoryTests: XCTestCase {
     }
 
     func makeHomeRepository(homeUserDefaults: HomeUserDefaultsDataSource = HomeUserDefaultsDataSourceMock()) -> HomeRepository {
-        let homeRepository = HomeRepositoryImpl(homeUserDefaultsDataSource: HomeUserDefaultsDataSourceMock())
+        let homeRepository = HomeRepositoryImpl(userDefaultsDataSource: homeUserDefaults)
         self.homeRepository = homeRepository
         return homeRepository
     }
@@ -45,11 +57,16 @@ class HomeRepositoryTests: XCTestCase {
 class HomeUserDefaultsDataSourceMock: HomeUserDefaultsDataSource {
     
     var fetchTodoCount = 0
+    var setCompletedCount = 0
     var result: [Todo]?
     
     func fetchTodos(completion: ([Todo]) -> Void) {
         fetchTodoCount += 1
         guard let result = result else { return }
         completion(result)
+    }
+    
+    func setCompleted(todoId: UUID, completed: Bool) {
+        setCompletedCount += 1
     }
 }
